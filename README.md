@@ -57,6 +57,3 @@ Beispiel: `20250315_49.99_amazon_302-1234567-8901234.pdf`
 
 Verwendet [Playwright](https://playwright.dev/) zur Browser-Automatisierung und [uv](https://docs.astral.sh/uv/) als Python-Paketmanager. Keine externen APIs, kein Cloud-Upload — alles läuft lokal.
 
-## Lizenz
-
-MIT
