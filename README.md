@@ -57,3 +57,18 @@ Beispiel: `20250315_49.99_amazon_302-1234567-8901234.pdf`
 
 Verwendet [Playwright](https://playwright.dev/) zur Browser-Automatisierung und [uv](https://docs.astral.sh/uv/) als Python-Paketmanager. Keine externen APIs, kein Cloud-Upload — alles läuft lokal.
 
+
+
+---
+
+## ☕ Unterstützung / Support
+
+**DE:** Dieses Tool ist kostenlos und wird in meiner Freizeit gepflegt. Wer möchte, kann mich gerne mit einem kleinen Betrag unterstützen — das freut mich sehr!
+
+**EN:** This tool is free and maintained in my spare time. If it saved you some work, feel free to buy me a coffee — much appreciated!
+
+[![Donate via PayPal](https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif)](https://www.paypal.com/donate/?hosted_button_id=RBNJ9PQF7J5T8)
+
+&nbsp;
+
+![QR Code](QR-Code.png)
