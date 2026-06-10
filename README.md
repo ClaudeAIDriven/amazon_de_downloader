@@ -4,12 +4,13 @@ Lädt automatisch alle Rechnungen von amazon.de als PDF herunter.
 
 ## Schnellstart
 
-1. Diesen Ordner herunterladen (grüner "Code"-Button → "Download ZIP")
-2. ZIP entpacken
-3. **`install_and_run.bat`** doppelklicken
-4. Bei der ersten Ausführung wird alles automatisch installiert (~200 MB, einmalig)
-5. Im Browser bei Amazon einloggen wenn das Fenster aufgeht
-6. Fertig — Rechnungen landen im Ordner `downloads\`
+1. ZIP herunterladen und entpacken
+2. **`install_and_run.bat`** doppelklicken
+3. Alles wird automatisch installiert — Python, Browser, Pakete (~250 MB, einmalig)
+4. Im Browser bei Amazon einloggen
+5. Fertig — Rechnungen landen im gewählten Ordner
+
+Beim nächsten Mal einfach **`start.bat`** doppelklicken.
 
 ## Voraussetzungen
 
@@ -17,7 +18,7 @@ Lädt automatisch alle Rechnungen von amazon.de als PDF herunter.
 - Internetverbindung (für die erste Installation)
 - Ein Amazon.de-Konto
 
-Kein Python, kein technisches Wissen nötig — alles wird automatisch eingerichtet.
+**Kein Python, kein technisches Wissen nötig** — alles wird vollautomatisch eingerichtet, einschließlich Python falls nicht vorhanden.
 
 ## Verwendung
 
