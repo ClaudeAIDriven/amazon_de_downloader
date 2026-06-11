@@ -277,6 +277,18 @@ def main():
                             const t = (a.innerText || a.textContent || '').trim();
                             return t.includes('Rechnung') || t.includes('Invoice') || t.includes('invoice');
                         }).map(a => ({text: a.innerText.trim(), href: a.href}));
+
+                        // Artikelname: aus Produkt-Links extrahieren (href enthält /dp/)
+                        let artikelName = '';
+                        const produktLinks = Array.from(card.querySelectorAll('a')).filter(a =>
+                            a.href && (a.href.includes('/dp/') || a.href.includes('/gp/product/'))
+                        );
+                        if (produktLinks.length > 0) {
+                            // Ersten Produktlink nehmen, Text bereinigen
+                            artikelName = (produktLinks[0].innerText || produktLinks[0].textContent || '').trim();
+                            // Nur erste Zeile falls mehrzeilig
+                            artikelName = artikelName.split('\\n')[0].trim();
+                        }
                         
                         results.push({
                             datum_raw: datumMatch ? datumMatch[0] : null,
@@ -284,7 +296,8 @@ def main():
                             bestell_id: idMatch ? idMatch[0] : null,
                             storniert: storniert,
                             rechnungslinks: links,
-                            text_preview: text.substring(0, 100)
+                            text_preview: text.substring(0, 100),
+                            artikel_name: artikelName
                         });
                     }
                     return results;
@@ -334,14 +347,15 @@ def main():
                     artikel_teil = ""
                     if title_words > 0:
                         try:
-                            artikel_raw = b.get('text_preview', '')
+                            # Gezielt den Artikelnamen aus dem DOM-Produktlink nutzen
+                            artikel_raw = b.get('artikel_name', '') or b.get('text_preview', '')
                             woerter = [w for w in artikel_raw.replace('\n',' ').split()
                                        if len(w) > 2 and not w.replace(',','').replace('.','').replace('€','').replace('$','').isdigit()]
                             if woerter:
                                 genommen = woerter[:title_words]
                                 teil = '-'.join(re.sub(r'[^\w]','',w) for w in genommen if re.sub(r'[^\w]','',w))
                                 if teil:
-                                    artikel_teil = '_' + teil[:40]
+                                    artikel_teil = '_' + teil[:100]
                         except Exception:
                             artikel_teil = ""
 
